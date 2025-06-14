@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화장품 연구 전문가 - 이력서</title>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #b02a5b;
+            --accent-color: #fce4ec;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --text-color: #444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 35px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section {
+            padding: 25px 35px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-color);
+            font-size: 1.4rem;
+        }
+        
+        .summary {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            flex: 1 1 250px;
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .skill-item {
+            background-color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .work-item {
+            margin-bottom: 25px;
+        }
+        
+        .work-title {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 1.15rem;
+        }
+        
+        .work-date {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .work-description {
+            margin-bottom: 10px;
+        }
+        
+        .achievements {
+            margin-left: 20px;
+        }
+        
+        .achievements li {
+            margin-bottom: 8px;
+        }
+        
+        .highlights {
+            margin-top: 30px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 6px;
+        }
+        
+        .highlight-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .highlight-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .education-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .education-institution {
+            font-style: italic;
+        }
+        
+        .award-section {
+            background-color: var(--accent-color);
+        }
+        
+        .award-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 15px;
+        }
+        
+        .award-item {
+            padding: 12px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .award-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .award-info {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .research-item {
+            margin-bottom: 15px;
+        }
+        
+        .research-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 25px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .award-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>화장품 연구 전문가</h1>
+            <div class="tagline">코스맥스 연구소 상무</div>
+            <div class="tagline">화장품 제형 및 소재 전문가 - 다수 특허 보유 및 수상 경력</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 research@cosmax.com
+                </div>
+                <div class="contact-item">
+                    📱 010-XXXX-XXXX
+                </div>
+            </div>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">전문가 소개</h2>
+            <div class="summary">
+                화장품 연구개발 분야에서 20년 이상의 경험을 보유한 상무로, 스킨케어 제형, 액정 에멀젼, 혁신적인 화장품 소재 개발을 전문으로 합니다. 온도 민감성 하이드로겔, 나노에멀젼, UV 차단 하이브리드 소재 등의 혁신적인 연구를 주도하여 다수의 특허를 보유하고 있으며, 산업계에서 권위 있는 상을 수상했습니다. 응용화학과 생명과학 전공으로 산업계와 정부기관에서의 풍부한 연구 경험을 갖추고 있습니다.
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">핵심 전문 분야</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>화장품 기술</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">스킨케어 제형</span>
+                        <span class="skill-item">액정 에멀젼</span>
+                        <span class="skill-item">나노에멀젼</span>
+                        <span class="skill-item">온도민감성 하이드로겔</span>
+                        <span class="skill-item">UV 차단 소재</span>
+                        <span class="skill-item">클렌징 시스템</span>
+                        <span class="skill-item">다공성 미립구</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>과학 분야</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">고분자 과학</span>
+                        <span class="skill-item">약물전달시스템</span>
+                        <span class="skill-item">분석화학</span>
+                        <span class="skill-item">안전성 평가</span>
+                        <span class="skill-item">기기분석</span>
+                        <span class="skill-item">생체고분자</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>연구 영역</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">제품 개발</span>
+                        <span class="skill-item">소재 혁신</span>
+                        <span class="skill-item">안전성 평가</span>
+                        <span class="skill-item">규제 과학</span>
+                        <span class="skill-item">품질 관리</span>
+                        <span class="skill-item">기술 이전</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">주요 경력</h2>
+            
+            <div class="work-item">
+                <h3 class="work-title">기반기술연구랩 상무</h3>
+                <div class="work-date">코스맥스 연구소 (2012년 - 현재)</div>
+                <div class="work-description">
+                    차세대 화장품 제품을 위한 혁신적인 기술에 중점을 둔 화장품 제형 및 소재 분야의 고급 연구를 주도
+                </div>
+                <ul class="achievements">
+                    <li>온도 민감성 하이드로겔 기술 개발 - 국내특허 등록 (2012)</li>
+                    <li>액정에멀젼 시스템 혁신 - 국내특허 등록 (2013)</li>
+                    <li>나노에멀젼 기술 개발 - 국내 및 미국특허 등록 (2014)</li>
+                    <li>다공성 미립구 기술 개발 - 국내 및 미국특허 등록 (2014)</li>
+                    <li>자외선차단용 유무기 하이브리드 소재 개발 - 국내특허 등록 (2015)</li>
+                    <li>메이크업 클렌징용 액정상 클렌저 개발 - 국내특허 등록 (2016)</li>
+                </ul>
+            </div>
+            
+            <div class="work-item">
+                <h3 class="work-title">보건연구사</h3>
+                <div class="work-date">식품의약품안전청 식품의약품안전평가원 (2006년 - 2012년)</div>
+                <div class="work-description">
+                    식품 안전성 평가를 위한 분석법 개발 및 검증, 유해물질 검출 및 평가 프로토콜에 중점
+                </div>
+                <ul class="achievements">
+                    <li>식품 중 유해물질 평가법 개발 및 표준화</li>
+                    <li>국가 식품 안전 규정 및 가이드라인 개발에 기여</li>
+                    <li>식품 안전성 분야 분석화학 응용 연구 수행</li>
+                </ul>
+            </div>
+            
+            <div class="work-item">
+                <h3 class="work-title">선임연구원</h3>
+                <div class="work-date">아모레퍼시픽 기술연구원 스킨케어연구소 (2004년 - 2006년)</div>
+                <div class="work-description">
+                    프리미엄 화장품 브랜드를 위한 스킨케어 제품 개발 및 제형 연구에 집중
+                </div>
+                <ul class="achievements">
+                    <li>안티에이징 제품을 위한 혁신적인 스킨케어 제형 개발</li>
+                    <li>제품 상용화 및 기술 최적화에 기여</li>
+                    <li>제품 개발 프로젝트에서 다부서 협업팀과 협력</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section highlights">
+            <h2 class="section-title">주요 성과</h2>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">🏆</div>
+                <div class="highlight-content">
+                    <h3>IR52 장영실상 수상</h3>
+                    <p>미래창조과학부에서 화장품 기술 혁신에 대한 뛰어난 기여로 기술혁신상 수상 (2016년 8월)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">🥇</div>
+                <div class="highlight-content">
+                    <h3>동암화장품과학자상 금상</h3>
+                    <p>화장품 소재 분야에서의 화장품 과학 연구 및 혁신 우수성 인정 (2016년 4월)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">🔬</div>
+                <div class="highlight-content">
+                    <h3>다수의 정부 인증</h3>
+                    <p>액정화장품 기술 개발로 보건복지부 보건신기술 NET 인증 (2014년 6월) 및 산업통상자원부 차세대세계일류상품 인증 (2014년 12월) 획득</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">📝</div>
+                <div class="highlight-content">
+                    <h3>특허 포트폴리오</h3>
+                    <p>하이드로겔, 나노에멀젼, 액정에멀젼, UV 차단 기술 분야에서 국내외 다수 특허 개발 및 등록</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">학력</h2>
+            
+            <div class="education-item">
+                <div class="education-title">나노바이오학과 박사과정</div>
+                <div class="education-institution">한양대학교 (2014년 - 현재)</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-title">생명과학과 석사</div>
+                <div class="education-institution">KAIST (한국과학기술원) (2002년 - 2004년)</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-title">응용화학부 학사</div>
+                <div class="education-institution">서울대학교 공과대학 (1995년 - 2001년)</div>
+            </div>
+        </section>
+        
+        <section class="section award-section">
+            <h2 class="section-title">수상 및 인증</h2>
+            
+            <div class="award-list">
+                <div class="award-item">
+                    <div class="award-title">IR52 장영실상</div>
+                    <div class="award-info">미래창조과학부 - 기술혁신상 (2016년 8월)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">동암화장품과학자상 금상</div>
+                    <div class="award-info">한국화장품화학자협회 (2016년 4월)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">차세대세계일류상품 인증</div>
+                    <div class="award-info">산업통상자원부 (2014년 12월)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">보건신기술 NET 인증</div>
+                    <div class="award-info">보건복지부 - 액정화장품 신기술 (2014년 6월)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">연구 실적 및 특허</h2>
+            
+            <div class="research-item">
+                <div class="research-title">온도 민감성 하이드로겔 개발 (2012년)</div>
+                <div>국내특허 등록 - 화장품 응용을 위한 고급 제어 방출 시스템</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">액정 에멀젼 기술 (2013년)</div>
+                <div>국내특허 등록 - 스킨케어 제형을 위한 향상된 안정성 및 전달 시스템</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">나노에멀젼 혁신 (2014년)</div>
+                <div>국내 및 미국특허 등록 - 향상된 생체이용률을 갖춘 고급 전달 시스템</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">다공성 미립구 기술 (2014년)</div>
+                <div>국내 및 미국특허 등록 - 제어 방출 및 텍스처 향상 기술</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">UV 차단 하이브리드 소재 (2015년)</div>
+                <div>국내특허 등록 - 향상된 자외선 차단을 위한 유무기 하이브리드 소재</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">액정상 클렌저 (2016년)</div>
+                <div>국내특허 등록 - 향상된 효능을 갖춘 고급 메이크업 제거 시스템</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">전문 지식 영역</h2>
+            
+            <div style="margin-top: 15px;">
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">주요 전문 분야:</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>화장품 - 제형, 소재, 평가법</li>
+                        <li>고분자 - 생체고분자 및 스마트 소재</li>
+                        <li>약물전달시스템</li>
+                        <li>분석화학 - 이화학 기기분석</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">연구 방법론:</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>고급 제형 개발 및 최적화</li>
+                        <li>소재 특성 분석 및 성능 평가</li>
+                        <li>안전성 평가 및 규제 준수</li>
+                        <li>스케일업 및 기술이전 프로세스</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            © 2025 화장품 연구 전문가 — 상무 — 코스맥스 연구소
+        </footer>
+    </div>
+</body>
+</html>

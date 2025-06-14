@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetics Research Expert - Resume</title>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #b02a5b;
+            --accent-color: #fce4ec;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --text-color: #444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            font-size: 1.5rem;
+        }
+        
+        .summary {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .skill-category {
+            flex: 1 1 300px;
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .skill-item {
+            background-color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .work-item {
+            margin-bottom: 30px;
+        }
+        
+        .work-title {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .work-date {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .work-description {
+            margin-bottom: 15px;
+        }
+        
+        .achievements {
+            margin-left: 20px;
+        }
+        
+        .achievements li {
+            margin-bottom: 8px;
+        }
+        
+        .highlights {
+            margin-top: 40px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 6px;
+        }
+        
+        .highlight-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .highlight-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .education-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .education-institution {
+            font-style: italic;
+        }
+        
+        .award-section {
+            background-color: var(--accent-color);
+        }
+        
+        .award-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 20px;
+        }
+        
+        .award-item {
+            padding: 15px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .award-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .award-info {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .research-item {
+            margin-bottom: 15px;
+        }
+        
+        .research-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .certification-item {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 6px;
+        }
+        
+        .certification-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .award-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cosmetics Research Expert</h1>
+            <div class="tagline">Senior Manager · COSMAX Research Institute</div>
+            <div class="tagline">Cosmetics Formulation & Materials Expert - Multiple Patents & Awards</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 research@cosmax.com
+                </div>
+                <div class="contact-item">
+                    📱 +82-10-XXXX-XXXX
+                </div>
+            </div>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary">
+                Senior Manager with over 20 years of experience in cosmetics research and development, specializing in skincare formulations, liquid crystal emulsions, and innovative cosmetic materials. Led groundbreaking research in temperature-sensitive hydrogels, nano-emulsions, and UV protection hybrid materials. Contributed to multiple patents and received prestigious industry awards. Advanced degrees in Applied Chemistry and Life Sciences with extensive experience in both industry and government research sectors.
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Core Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cosmetic Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Skincare Formulation</span>
+                        <span class="skill-item">Liquid Crystal Emulsion</span>
+                        <span class="skill-item">Nano-emulsion</span>
+                        <span class="skill-item">Temperature-Sensitive Hydrogel</span>
+                        <span class="skill-item">UV Protection Materials</span>
+                        <span class="skill-item">Cleansing Systems</span>
+                        <span class="skill-item">Porous Microspheres</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Scientific Disciplines</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Polymer Science</span>
+                        <span class="skill-item">Drug Delivery Systems</span>
+                        <span class="skill-item">Analytical Chemistry</span>
+                        <span class="skill-item">Safety Evaluation</span>
+                        <span class="skill-item">Instrumental Analysis</span>
+                        <span class="skill-item">Biopolymers</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Research Areas</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Product Development</span>
+                        <span class="skill-item">Material Innovation</span>
+                        <span class="skill-item">Safety Assessment</span>
+                        <span class="skill-item">Regulatory Science</span>
+                        <span class="skill-item">Quality Control</span>
+                        <span class="skill-item">Technology Transfer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="work-item">
+                <h3 class="work-title">Senior Manager, Foundation Technology Research Lab</h3>
+                <div class="work-date">COSMAX Research Institute (2012 - Present)</div>
+                <div class="work-description">
+                    Leading advanced research in cosmetic formulations and materials, focusing on innovative technologies for next-generation cosmetic products.
+                </div>
+                <ul class="achievements">
+                    <li>Developed temperature-sensitive hydrogel technology with domestic patent registration (2012)</li>
+                    <li>Innovated liquid crystal emulsion systems with domestic patent registration (2013)</li>
+                    <li>Created nano-emulsion technology with domestic and US patent registrations (2014)</li>
+                    <li>Developed porous microsphere technology with domestic and US patent registrations (2014)</li>
+                    <li>Pioneered UV protection organic-inorganic hybrid materials with domestic patent registration (2015)</li>
+                    <li>Developed liquid crystal phase cleanser for makeup removal with domestic patent registration (2016)</li>
+                </ul>
+            </div>
+            
+            <div class="work-item">
+                <h3 class="work-title">Health Researcher</h3>
+                <div class="work-date">Korea Food & Drug Administration, National Institute of Food and Drug Safety Evaluation (2006 - 2012)</div>
+                <div class="work-description">
+                    Developed and validated analytical methods for food safety evaluation, focusing on hazardous substance detection and assessment protocols.
+                </div>
+                <ul class="achievements">
+                    <li>Established standardized methods for hazardous substance evaluation in food products</li>
+                    <li>Contributed to national food safety regulations and guidelines</li>
+                    <li>Conducted research on analytical chemistry applications in food safety</li>
+                </ul>
+            </div>
+            
+            <div class="work-item">
+                <h3 class="work-title">Senior Researcher</h3>
+                <div class="work-date">AmorePacific R&D Center, Skincare Research Institute (2004 - 2006)</div>
+                <div class="work-description">
+                    Focused on skincare product development and formulation research for premium cosmetic brands.
+                </div>
+                <ul class="achievements">
+                    <li>Developed innovative skincare formulations for anti-aging products</li>
+                    <li>Contributed to product commercialization and technology optimization</li>
+                    <li>Collaborated with cross-functional teams on product development projects</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section highlights">
+            <h2 class="section-title">Key Achievement Highlights</h2>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">🏆</div>
+                <div class="highlight-content">
+                    <h3>IR52 Jang Yeong-sil Award</h3>
+                    <p>Received Technology Innovation Award from Ministry of Science and ICT for outstanding contributions to cosmetic technology innovation (August 2016)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">🥇</div>
+                <div class="highlight-content">
+                    <h3>Dongam Cosmetic Science Award Gold</h3>
+                    <p>Recognition for excellence in cosmetic science research and innovation in the field of cosmetic materials (April 2016)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">🔬</div>
+                <div class="highlight-content">
+                    <h3>Multiple Government Certifications</h3>
+                    <p>Received Health and Welfare Ministry NET certification for liquid crystal cosmetic technology development (June 2014) and Next-Generation World-Class Product certification from Ministry of Trade, Industry and Energy (December 2014)</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">📝</div>
+                <div class="highlight-content">
+                    <h3>Patent Portfolio</h3>
+                    <p>Developed and registered multiple patents in hydrogel, nano-emulsion, liquid crystal emulsion, and UV protection technologies both domestically and internationally</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-title">Ph.D. Candidate in Nano-Biotechnology</div>
+                <div class="education-institution">Hanyang University (2014 - Present)</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-title">Master's in Life Sciences</div>
+                <div class="education-institution">KAIST (Korea Advanced Institute of Science and Technology) (2002 - 2004)</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-title">Bachelor's in Applied Chemistry</div>
+                <div class="education-institution">Seoul National University, College of Engineering (1995 - 2001)</div>
+            </div>
+        </section>
+        
+        <section class="section award-section">
+            <h2 class="section-title">Awards & Recognition</h2>
+            
+            <div class="award-list">
+                <div class="award-item">
+                    <div class="award-title">IR52 Jang Yeong-sil Award</div>
+                    <div class="award-info">Ministry of Science and ICT - Technology Innovation Award (August 2016)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Dongam Cosmetic Science Award Gold</div>
+                    <div class="award-info">Korean Society of Cosmetic Chemists (April 2016)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Next-Generation World-Class Product Certification</div>
+                    <div class="award-info">Ministry of Trade, Industry and Energy (December 2014)</div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-title">Health New Technology NET Certification</div>
+                    <div class="award-info">Ministry of Health and Welfare - Liquid Crystal Cosmetic Technology (June 2014)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Research Portfolio & Patents</h2>
+            
+            <div class="research-item">
+                <div class="research-title">Temperature-Sensitive Hydrogel Development (2012)</div>
+                <div>Domestic Patent Registration - Advanced controlled release system for cosmetic applications</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">Liquid Crystal Emulsion Technology (2013)</div>
+                <div>Domestic Patent Registration - Enhanced stability and delivery system for skincare formulations</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">Nano-emulsion Innovation (2014)</div>
+                <div>Domestic and US Patent Registration - Advanced delivery system with improved bioavailability</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">Porous Microsphere Technology (2014)</div>
+                <div>Domestic and US Patent Registration - Controlled release and texture enhancement technology</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">UV Protection Hybrid Materials (2015)</div>
+                <div>Domestic Patent Registration - Organic-inorganic hybrid materials for enhanced sun protection</div>
+            </div>
+            
+            <div class="research-item">
+                <div class="research-title">Liquid Crystal Phase Cleanser (2016)</div>
+                <div>Domestic Patent Registration - Advanced makeup removal system with improved efficacy</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Specialized Knowledge Areas</h2>
+            
+            <div style="margin-top: 15px;">
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Primary Specializations:</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Cosmetics - Formulation, Materials, Evaluation Methods</li>
+                        <li>Polymers - Biopolymers and Smart Materials</li>
+                        <li>Drug Delivery Systems</li>
+                        <li>Analytical Chemistry - Physical and Chemical Instrumental Analysis</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Research Methodologies:</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Advanced formulation development and optimization</li>
+                        <li>Material characterization and performance evaluation</li>
+                        <li>Safety assessment and regulatory compliance</li>
+                        <li>Scale-up and technology transfer processes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            © 2025 Cosmetics Research Expert — Senior Manager — COSMAX Research Institute
+        </footer>
+    </div>
+</body>
+</html>

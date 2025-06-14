@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetics Research Expert | Display Technology Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #b02a5b;
+            --accent-color: #fce4ec;
+            --highlight-color: #f06292;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --text-color: #444;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .bio {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .social-link:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+            border-top-color: var(--highlight-color);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-color);
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--highlight-color);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .skill-item:hover {
+            background-color: var(--highlight-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .resume-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .resume-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        
+        .resume-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .resume-header {
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resume-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        
+        .resume-body {
+            padding: 25px;
+        }
+        
+        .resume-title {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .resume-desc {
+            opacity: 0.9;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--secondary-color);
+            transition: all 0.5s ease;
+            z-index: -1;
+            border-radius: 30px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .featured-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 35px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+        
+        .project-body {
+            padding: 25px;
+        }
+        
+        .project-title {
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+        
+        .tag {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .tag:hover {
+            background-color: var(--highlight-color);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            color: var(--text-color);
+            border-top: 1px solid #eee;
+        }
+        
+        .language-toggle {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+        }
+        
+        .language-btn {
+            padding: 8px 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .language-btn:hover, .language-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .language-btn.active {
+            font-weight: 600;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="main-name">Cosmetics Research Expert</h1>
+            <div class="subtitle" id="main-position">Senior Manager · COSMAX Research Institute</div>
+            <div class="subtitle" id="main-specialty">Cosmetics Formulation & Materials Expert</div>
+            
+            <p class="bio" id="main-bio">
+                With over 20 years of experience in cosmetics research and development, I specialize in skincare formulations, liquid crystal emulsions, and innovative cosmetic materials. I've led groundbreaking research in temperature-sensitive hydrogels, nano-emulsions, and UV protection hybrid materials, contributing to multiple patents and industry awards.
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:research@cosmax.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" class="social-link" title="Research Portfolio">
+                    <i class="fas fa-flask"></i>
+                </a>
+                <a href="#" class="social-link" title="Publications">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="#" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            
+            <div class="language-toggle">
+                <button class="language-btn active" onclick="switchLanguage('en')">English</button>
+                <button class="language-btn" onclick="switchLanguage('ko')">한국어</button>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title" id="expertise-title">Expertise</h2>
+                <p id="expertise-desc">
+                    As a cosmetics research expert with advanced degrees in Applied Chemistry and Life Sciences, I specialize in developing innovative formulations and materials that push the boundaries of cosmetic science and technology.
+                </p>
+                
+                <div class="skill-list">
+                    <span class="skill-item">Skincare Formulation</span>
+                    <span class="skill-item">Liquid Crystal Emulsion</span>
+                    <span class="skill-item">Nano-emulsion</span>
+                    <span class="skill-item">Hydrogel Development</span>
+                    <span class="skill-item">UV Protection Materials</span>
+                    <span class="skill-item">Drug Delivery Systems</span>
+                    <span class="skill-item">Analytical Chemistry</span>
+                    <span class="skill-item">Polymer Science</span>
+                    <span class="skill-item">Safety Evaluation</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title" id="career-title">Career Highlights</h2>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 15px;">
+                        <strong>🏆 <span id="award1-title">IR52 Jang Yeong-sil Award</span></strong><br>
+                        <span id="award1-desc">Technology Innovation Award from Ministry of Science and ICT (2016)</span>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <strong>🥇 <span id="award2-title">Dongam Cosmetic Science Award Gold</span></strong><br>
+                        <span id="award2-desc">Recognition for excellence in cosmetic science research (2016)</span>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <strong>🔬 <span id="research-title">Multiple Patent Innovations</span></strong><br>
+                        <span id="research-desc">Registered patents in hydrogel, nano-emulsion, and liquid crystal technologies</span>
+                    </li>
+                    <li>
+                        <strong>🏛️ <span id="gov-title">Government Research Experience</span></strong><br>
+                        <span id="gov-desc">6 years at Korea Food & Drug Administration developing safety evaluation methods</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 class="section-title" id="resume-section-title" style="max-width: 1000px; margin: 40px auto 20px;">Resume / Curriculum Vitae</h2>
+        
+        <div class="resume-links">
+            <div class="resume-card">
+                <div class="resume-header">
+                    <h3 class="resume-title" id="en-resume-title">English Resume</h3>
+                    <p class="resume-desc" id="en-resume-desc">Comprehensive professional experience and research achievements</p>
+                </div>
+                <div class="resume-body">
+                    <p id="en-resume-text">Detailed overview of my research experience, technical expertise, patents, and publications in cosmetic science in English.</p>
+                    <a href="resume-english-cosmetics.html" class="btn" id="en-resume-btn">View English Resume</a>
+                </div>
+            </div>
+            
+            <div class="resume-card">
+                <div class="resume-header">
+                    <h3 class="resume-title" id="ko-resume-title">한글 이력서</h3>
+                    <p class="resume-desc" id="ko-resume-desc">화장품 연구 경력과 업적을 한글로 정리</p>
+                </div>
+                <div class="resume-body">
+                    <p id="ko-resume-text">화장품 과학 분야에서의 전문 연구 경력, 특허, 출판물 등을 한글로 상세히 정리한 이력서입니다.</p>
+                    <a href="resume-korean-cosmetics.html" class="btn" id="ko-resume-btn">한글 이력서 보기</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" style="margin-top: 40px;">
+            <h2 class="section-title" id="projects-title">Featured Research & Technologies</h2>
+            
+            <div class="featured-projects">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title" id="project1-title">Liquid Crystal Emulsion Technology</h3>
+                        <p id="project1-desc">Developed innovative liquid crystal emulsion technology for advanced skincare applications with enhanced stability and delivery properties.</p>
+                        <div class="tag-list">
+                            <span class="tag">Liquid Crystal</span>
+                            <span class="tag">Emulsion</span>
+                            <span class="tag">Skincare</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title" id="project2-title">Temperature-Sensitive Hydrogel</h3>
+                        <p id="project2-desc">Pioneered temperature-responsive hydrogel materials for controlled release applications in cosmetic formulations.</p>
+                        <div class="tag-list">
+                            <span class="tag">Hydrogel</span>
+                            <span class="tag">Temperature-Sensitive</span>
+                            <span class="tag">Controlled Release</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title" id="project3-title">UV Protection Hybrid Materials</h3>
+                        <p id="project3-desc">Developed organic-inorganic hybrid materials for enhanced UV protection with improved cosmetic elegance and safety.</p>
+                        <div class="tag-list">
+                            <span class="tag">UV Protection</span>
+                            <span class="tag">Hybrid Materials</span>
+                            <span class="tag">Safety</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Cosmetics Research Expert. <span id="footer-text">All rights reserved.</span></p>
+            <p id="position">Senior Manager at COSMAX Research Institute</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Define content for both languages
+        const content = {
+            en: {
+                mainName: "Cosmetics Research Expert",
+                mainPosition: "Senior Manager · COSMAX Research Institute",
+                mainSpecialty: "Cosmetics Formulation & Materials Expert",
+                bio: "With over 20 years of experience in cosmetics research and development, I specialize in skincare formulations, liquid crystal emulsions, and innovative cosmetic materials. I've led groundbreaking research in temperature-sensitive hydrogels, nano-emulsions, and UV protection hybrid materials, contributing to multiple patents and industry awards.",
+                expertiseTitle: "Expertise",
+                expertiseDesc: "As a cosmetics research expert with advanced degrees in Applied Chemistry and Life Sciences, I specialize in developing innovative formulations and materials that push the boundaries of cosmetic science and technology.",
+                careerHighlightsTitle: "Career Highlights",
+                award1Title: "IR52 Jang Yeong-sil Award",
+                award1Desc: "Technology Innovation Award from Ministry of Science and ICT (2016)",
+                award2Title: "Dongam Cosmetic Science Award Gold",
+                award2Desc: "Recognition for excellence in cosmetic science research (2016)",
+                researchTitle: "Multiple Patent Innovations",
+                researchDesc: "Registered patents in hydrogel, nano-emulsion, and liquid crystal technologies",
+                govTitle: "Government Research Experience",
+                govDesc: "6 years at Korea Food & Drug Administration developing safety evaluation methods",
+                resumeTitle: "Resume / Curriculum Vitae",
+                englishResumeTitle: "English Resume",
+                englishResumeDesc: "Comprehensive professional experience and research achievements",
+                englishResumeText: "Detailed overview of my research experience, technical expertise, patents, and publications in cosmetic science in English.",
+                englishResumeBtn: "View English Resume",
+                koreanResumeTitle: "한글 이력서",
+                koreanResumeDesc: "화장품 연구 경력과 업적을 한글로 정리",
+                koreanResumeText: "화장품 과학 분야에서의 전문 연구 경력, 특허, 출판물 등을 한글로 상세히 정리한 이력서입니다.",
+                koreanResumeBtn: "한글 이력서 보기",
+                projectsTitle: "Featured Research & Technologies",
+                project1Title: "Liquid Crystal Emulsion Technology",
+                project1Desc: "Developed innovative liquid crystal emulsion technology for advanced skincare applications with enhanced stability and delivery properties.",
+                project2Title: "Temperature-Sensitive Hydrogel",
+                project2Desc: "Pioneered temperature-responsive hydrogel materials for controlled release applications in cosmetic formulations.",
+                project3Title: "UV Protection Hybrid Materials",
+                project3Desc: "Developed organic-inorganic hybrid materials for enhanced UV protection with improved cosmetic elegance and safety.",
+                footerText: "All rights reserved.",
+                position: "Senior Manager at COSMAX Research Institute"
+            },
+            ko: {
+                mainName: "화장품 연구 전문가",
+                mainPosition: "코스맥스 연구소 상무",
+                mainSpecialty: "화장품 제형 및 소재 전문가",
+                bio: "화장품 연구개발 분야에서 20년 이상의 경험을 보유한 전문가로, 스킨케어 제형, 액정 에멀젼, 혁신적인 화장품 소재를 전문으로 합니다. 온도 민감성 하이드로겔, 나노에멀젼, UV 차단 하이브리드 소재 등의 혁신적인 연구를 주도하여 다수의 특허와 산업계 상을 수상했습니다.",
+                expertiseTitle: "전문 분야",
+                expertiseDesc: "응용화학과 생명과학 전공으로서 화장품 과학과 기술의 한계를 넓히는 혁신적인 제형과 소재 개발을 전문으로 합니다.",
+                careerHighlightsTitle: "주요 경력 성과",
+                award1Title: "IR52 장영실상 수상",
+                award1Desc: "미래창조과학부 기술혁신상 (2016년)",
+                award2Title: "동암화장품과학자상 금상",
+                award2Desc: "화장품 과학 연구 우수성 인정 (2016년)",
+                researchTitle: "다수의 특허 혁신",
+                researchDesc: "하이드로겔, 나노에멀젼, 액정 기술 분야 특허 등록",
+                govTitle: "정부기관 연구 경험",
+                govDesc: "식품의약품안전청에서 6년간 안전성 평가법 개발",
+                resumeTitle: "이력서 / 경력기술서",
+                englishResumeTitle: "영문 이력서",
+                englishResumeDesc: "종합적인 전문 경력과 연구 성과",
+                englishResumeText: "영어로 작성된 화장품 과학 분야의 연구 경력, 기술적 전문성, 특허 및 출판물에 대한 상세한 개요입니다.",
+                englishResumeBtn: "영문 이력서 보기",
+                koreanResumeTitle: "한글 이력서",
+                koreanResumeDesc: "화장품 연구 경력과 업적을 한글로 정리",
+                koreanResumeText: "화장품 과학 분야에서의 전문 연구 경력, 특허, 출판물 등을 한글로 상세히 정리한 이력서입니다.",
+                koreanResumeBtn: "한글 이력서 보기",
+                projectsTitle: "주요 연구 및 기술",
+                project1Title: "액정 에멀젼 기술",
+                project1Desc: "향상된 안정성과 전달 특성을 갖춘 고급 스킨케어 애플리케이션용 혁신적인 액정 에멀젼 기술을 개발했습니다.",
+                project2Title: "온도 민감성 하이드로겔",
+                project2Desc: "화장품 제형에서 제어 방출 응용을 위한 온도 반응성 하이드로겔 소재를 개척했습니다.",
+                project3Title: "UV 차단 하이브리드 소재",
+                project3Desc: "향상된 화장품 우아함과 안전성을 갖춘 강화된 UV 차단을 위한 유무기 하이브리드 소재를 개발했습니다.",
+                footerText: "모든 권리 보유.",
+                position: "코스맥스 연구소 상무"
+            }
+        };
+        
+        function switchLanguage(lang) {
+            // Update active button
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            const activeButton = document.querySelector(`.language-btn[onclick="switchLanguage('${lang}')"]`);
+            activeButton.classList.add('active');
+            
+            // Update content based on selected language
+            document.querySelector('#main-name').textContent = content[lang].mainName;
+            document.querySelector('#main-position').textContent = content[lang].mainPosition;
+            document.querySelector('#main-specialty').textContent = content[lang].mainSpecialty;
+            document.querySelector('#main-bio').textContent = content[lang].bio;
+            document.querySelector('#expertise-title').textContent = content[lang].expertiseTitle;
+            document.querySelector('#expertise-desc').textContent = content[lang].expertiseDesc;
+            document.querySelector('#career-title').textContent = content[lang].careerHighlightsTitle;
+            
+            document.querySelector('#award1-title').textContent = content[lang].award1Title;
+            document.querySelector('#award1-desc').textContent = content[lang].award1Desc;
+            document.querySelector('#award2-title').textContent = content[lang].award2Title;
+            document.querySelector('#award2-desc').textContent = content[lang].award2Desc;
+            document.querySelector('#research-title').textContent = content[lang].researchTitle;
+            document.querySelector('#research-desc').textContent = content[lang].researchDesc;
+            document.querySelector('#gov-title').textContent = content[lang].govTitle;
+            document.querySelector('#gov-desc').textContent = content[lang].govDesc;
+            
+            document.querySelector('#resume-section-title').textContent = content[lang].resumeTitle;
+            
+            document.querySelector('#en-resume-title').textContent = content[lang].englishResumeTitle;
+            document.querySelector('#en-resume-desc').textContent = content[lang].englishResumeDesc;
+            document.querySelector('#en-resume-text').textContent = content[lang].englishResumeText;
+            document.querySelector('#en-resume-btn').textContent = content[lang].englishResumeBtn;
+            
+            document.querySelector('#ko-resume-title').textContent = content[lang].koreanResumeTitle;
+            document.querySelector('#ko-resume-desc').textContent = content[lang].koreanResumeDesc;
+            document.querySelector('#ko-resume-text').textContent = content[lang].koreanResumeText;
+            document.querySelector('#ko-resume-btn').textContent = content[lang].koreanResumeBtn;
+            
+            document.querySelector('#projects-title').textContent = content[lang].projectsTitle;
+            
+            document.querySelector('#project1-title').textContent = content[lang].project1Title;
+            document.querySelector('#project1-desc').textContent = content[lang].project1Desc;
+            document.querySelector('#project2-title').textContent = content[lang].project2Title;
+            document.querySelector('#project2-desc').textContent = content[lang].project2Desc;
+            document.querySelector('#project3-title').textContent = content[lang].project3Title;
+            document.querySelector('#project3-desc').textContent = content[lang].project3Desc;
+            
+            document.querySelector('#footer-text').textContent = content[lang].footerText;
+            document.querySelector('#position').textContent = content[lang].position;
+        }
+    </script>
+</body>
+</html>
